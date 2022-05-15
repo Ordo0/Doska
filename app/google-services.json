@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "494548553333",
+    "project_id": "doska-16e63",
+    "storage_bucket": "doska-16e63.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:494548553333:android:f2b34fcfac1b79d3ab323c",
+        "android_client_info": {
+          "package_name": "com.kv.doska"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "494548553333-mmueosam8rclhar1fooetpe9rmjkhmdg.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAXMPIfBNCt43STJv8RdP5rGSRKSyKQoWs"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "494548553333-mmueosam8rclhar1fooetpe9rmjkhmdg.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
