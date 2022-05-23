@@ -1,6 +1,9 @@
 package com.kv.doska.accounthelper
 
 import android.widget.Toast
+import com.google.android.gms.auth.api.signin.GoogleSignInAccount
+import com.google.android.gms.auth.api.signin.GoogleSignInClient
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions
 import com.google.firebase.auth.FirebaseUser
 import com.kv.doska.MainActivity
 import com.kv.doska.R
@@ -23,6 +26,11 @@ class AccountHelper(private val act: MainActivity) {
                     }
                 }
         }
+    }
+
+    private fun getSignInClient(): GoogleSignInClient {
+        val gso = GoogleSignInOptions.Builder(GoogleSignInOptions.DEFAULT_SIGN_IN)
+            .requestIdToken(act.getString(R.string.))
     }
 
     fun signInWithEmail(email: String, password: String) {

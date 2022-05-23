@@ -2,6 +2,7 @@ package com.kv.doska.dialoghelper
 
 import android.app.AlertDialog
 import android.view.View
+import android.widget.Toast
 import com.kv.doska.MainActivity
 import com.kv.doska.R
 import com.kv.doska.accounthelper.AccountHelper
@@ -23,7 +24,33 @@ class DialogHelper(private val act: MainActivity) {
         rootDialogElement.btSignUpIn.setOnClickListener {
             setOnClickSignUpIn(index, rootDialogElement, dialog)
         }
+
+        rootDialogElement.btforgetP.setOnClickListener {
+            setOnClickResetPassword(rootDialogElement, dialog)
+        }
         dialog.show()
+    }
+
+    private fun setOnClickResetPassword(
+        rootDialogElement: SignDialogBinding,
+        dialog: AlertDialog?
+    ) {
+        if (rootDialogElement.edSignEmail.text.isNotEmpty()) {
+            act.mAuth.sendPasswordResetEmail(rootDialogElement.edSignEmail.text.toString())
+                .addOnCompleteListener { task ->
+                    if (task.isSuccessful) {
+                        Toast.makeText(
+                            act,
+                            R.string.email_reset_password_was_sent,
+                            Toast.LENGTH_LONG
+                        ).show()
+                    }
+                }
+            dialog?.dismiss()
+        } else {
+            rootDialogElement.tvDialogMessage.visibility = View.VISIBLE
+
+        }
     }
 
     private fun setOnClickSignUpIn(
